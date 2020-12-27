@@ -200,16 +200,81 @@ Click on Update
 
 # End of Lab
 
+# SingleEC2-deployment-cc-Lab
+
+**Step 1.Launch an Instance with default settings**
+
+**Step 2.Ec2>Actions>Connect>connect**
+
+**Step 3.Run the following commands**
+```sh
+$ sudo su 
+$ yum update -y
+$ curl -sL https://rpm.nodesource.com/setup.lts.x | bash -
+$ yum install nodejs -y
+$ node -v
+$ yum install git -y
+$ git --version
+$ git clone https://git.codecommit.ap.south-1.amazonaws.com/v1/repos/Sample-Node-App
+# Provide User name & Password
+$ Clear
+$ ls 
+$ cd Sample-Node-App/
+$ npm install
+$ node app.js
+```
+**Step 4.Copy the INSTANCE Public ip address and paste it in browser**
+- Not coming up due to no port 3000 open
+
+**Step 5.Ec2>Security Groups>select your SG>Edit inbound rules**
+- Add rule 
+  Type - Custom TCP 
+  Port - 3000 
+  Source - 0.0.0.0/0
+  
+Click to Save rules
+
+**Step 5.Copy the INSTANCE Public ip address and paste it in browser**
+Now it is Up and running.
+
+# End of Lab
+
+# ElasticBeanstalk
 **Step 1.AWS Management Console>Services>Elastic Beanstalk>Create Application**
 
 **Step 2.In Create a web app give details as following**
-- Application name - node-app
-- Platform - Node.js 
-- Application>Upload your code>choose file
 
+Application name - node-app
+Platform - Node.js
+Application>Upload your code>choose file
 Click on Create application
 
 **Step 3.Elastic Beanstalk>Environments>NodeApp-env**
-- Click on URL and see it is running
 
-**Step 4.Elastic Beanstalk>Applications>node-app>Application version
+Click on URL and see it is running
+**Step 4.Elastic Beanstalk>Applications>node-app>Application version**
+
+**Step 5.Check for the resources created**
+- Ec2>Launch Configuration>awseb-xxxx created
+- Ec2>Auto Scaling groups>select auto scaling group>edit
+  - See Load balancer is created 
+- Ec2>Target groups>awseb-xxx>Targets
+  -Port is showing 80 in Registered targets
+
+**Step 5.Copy this Instance public ip and paste it in browser**
+- Not coming up
+
+**Step 7.Ec2>Security Groups>select your SG>Edit inbound rules**
+- See it is only accepting traffic on port 80 from only Load balancer
+- Add rule 
+  Type - HTTP
+  Port - 80 
+  Source - 0.0.0.0/0
+  
+click on save rules
+
+**Step 8.Copy this Instance public ip and paste it in browser**
+- Running fine now
+
+# End of lab
+
