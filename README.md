@@ -239,6 +239,68 @@ Now it is Up and running.
 
 # End of Lab
 
+# SingleEc2Deployment-S3-lab
+
+**Step 1. AWS Management Console>Services>S3>Create Bucket**
+
+**Step 2. Give following details**
+- Bucket name - teacheramitk
+- Region
+
+Click on Create Bucket
+
+**Step 3. Click on bucket teacheramitk>Upload**
+
+**Step 4. Open Visual Studio Code**
+- Open new-node-project Folder
+- Open the Terminal
+- Type the following commands
+```sh
+$ zip -r new-node-project.zip . -x ".*" -x "_MACOSX"
+```
+
+**Step 5.Click on bucket teacheramitk>Upload>Add files>new-node-project.zip**
+- Click on Upload
+
+**Step 6. Click on new-node-project.zip**
+- Copy S3 URI
+
+**Step 7.Create Ec2 Instance**
+- Use Default settings to create Ec2
+- Security group with 80,22,300 Port Open
+
+**Step 8.EC2>Instances>Instance-xxx>Actions>Connect>connect**
+```sh
+$ sudo su
+$ yum update -y
+$ curl -sL https://rpm.nodesource.com/setup_lts.x | bash -
+$ yum install nodejs -y
+$ aws s3 cp s3://teacheramitk/new-node-project.zip
+# fatal Error
+```
+**Step 9. Goto AWS Management Console>Services>IAM>Roles>EC2S3FullAccess**
+- Click on Permissions to check the policy
+
+**Step 10. Goto Ec2Dashboard>Actions>Security>Modify IAM role**
+- IAM role - EC2S3FullAccess
+
+Click on Save
+
+**Step 11. Goto Step 8 and continue..**
+```sh
+$ aws s3 cp s3://teacheramitk/new-node-project.zip
+$ ls
+$ unzip new-node-project
+$ ls
+$ npm install
+$ node app.js
+```
+**Step 11. Copy the Public Ip address and paste in the browser**
+- Application is working fine
+
+# End of Lab
+
+
 # ElasticBeanstalk
 **Step 1.AWS Management Console>Services>Elastic Beanstalk>Create Application**
 
