@@ -228,9 +228,9 @@ $ node app.js
 
 **Step 5.Ec2>Security Groups>select your SG>Edit inbound rules**
 - Add rule 
-  Type - Custom TCP 
-  Port - 3000 
-  Source - 0.0.0.0/0
+   - Type - Custom TCP 
+   - Port - 3000 
+   - Source - 0.0.0.0/0
   
 Click to Save rules
 
@@ -256,10 +256,12 @@ Click on URL and see it is running
 
 **Step 5.Check for the resources created**
 - Ec2>Launch Configuration>awseb-xxxx created
+
 - Ec2>Auto Scaling groups>select auto scaling group>edit
   - See Load balancer is created 
+  
 - Ec2>Target groups>awseb-xxx>Targets
-  -Port is showing 80 in Registered targets
+  - Port is showing 80 in Registered targets
 
 **Step 5.Copy this Instance public ip and paste it in browser**
 - Not coming up
@@ -267,14 +269,14 @@ Click on URL and see it is running
 **Step 7.Ec2>Security Groups>select your SG>Edit inbound rules**
 - See it is only accepting traffic on port 80 from only Load balancer
 - Add rule 
-  Type - HTTP
-  Port - 80 
-  Source - 0.0.0.0/0
+  - Type - HTTP
+  - Port - 80 
+  - Source - 0.0.0.0/0
   
 click on save rules
 
 **Step 8.Copy this Instance public ip and paste it in browser**
-- Running fine now
+- Now it is Up and running
 
 # End of lab
 
