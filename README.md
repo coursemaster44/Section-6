@@ -359,12 +359,12 @@ click on save rules
 **Step 3. AWS Management Console>EC2 Dashboard>Load Balancing>load Balancers>testlb>Actions>Delete**
 - Click on Yes,Delete
 
-**Step 5. AWS Management Console>EC2 Dashboard>Load Balancing>Target groups>test>Actions>Delete**
+**Step 4. AWS Management Console>EC2 Dashboard>Load Balancing>Target groups>test>Actions>Delete**
 - Click on Yes,Delete  
 
-**Step 2. Goto AWS Management Console>EC2 Dashboard>Auto Scaling Groups>test-asg>delete>confirm delete**
+**Step 5. Goto AWS Management Console>EC2 Dashboard>Auto Scaling Groups>test-asg>delete>confirm delete**
 
-**Step 3. Goto AWS Management Console>EC2 Dashboard>AUTO SCALING>Launch configurations>test-lc>Actions>Delete>Confirm delete**
+**Step 6. Goto AWS Management Console>EC2 Dashboard>AUTO SCALING>Launch configurations>test-lc>Actions>Delete>Confirm delete**
 
 # End of lab
 
