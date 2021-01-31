@@ -1,5 +1,103 @@
 # Section-6
 
+# Deploy Sample App on single ec2 from CodeCommit- Lab
+
+**Step 1.Launch an Instance with default settings**
+
+**Step 2.Ec2>Actions>Connect>connect**
+
+**Step 3.Run the following commands**
+```sh
+$ sudo su 
+$ yum update -y
+$ curl -sL https://rpm.nodesource.com/setup.lts.x | bash -
+$ yum install nodejs -y
+$ node -v
+$ yum install git -y
+$ git --version
+$ git clone https://git.codecommit.ap.south-1.amazonaws.com/v1/repos/Sample-Node-App
+# Provide User name & Password
+$ Clear
+$ ls 
+$ cd Sample-Node-App/
+$ npm install
+$ node app.js
+```
+**Step 4.Copy the INSTANCE Public ip address and paste it in browser**
+- Not coming up due to no port 3000 open
+
+**Step 5.Ec2>Security Groups>select your SG>Edit inbound rules**
+- Add rule 
+   - Type - Custom TCP 
+   - Port - 3000 
+   - Source - 0.0.0.0/0
+  
+Click to Save rules
+
+**Step 5.Copy the INSTANCE Public ip address and paste it in browser**
+Now it is Up and running.
+
+# End of Lab
+
+# Deploy Sample App on single ec2 from S3 - Lab
+
+**Step 1. AWS Management Console>Services>S3>Create Bucket**
+
+**Step 2. Give following details**
+- Bucket name - teacheramitk
+- Region
+
+Click on Create Bucket
+
+**Step 3. Click on bucket teacheramitk>Upload**
+
+**Step 4. Open Visual Studio Code**
+- Open new-node-project Folder
+- Open the Terminal
+- Type the following commands
+```sh
+$ zip -r new-node-project.zip . -x ".*" -x "_MACOSX"
+```
+
+**Step 5.Click on bucket teacheramitk>Upload>Add files>new-node-project.zip**
+- Click on Upload
+
+**Step 6. Click on new-node-project.zip**
+- Copy S3 URI
+
+**Step 7.Create Ec2 Instance**
+- Use Default settings to create Ec2
+- Security group with 80,22,300 Port Open
+
+**Step 8.EC2>Instances>Instance-xxx>Actions>Connect>connect**
+```sh
+$ sudo su
+$ yum update -y
+$ curl -sL https://rpm.nodesource.com/setup_lts.x | bash -
+$ yum install nodejs -y
+$ aws s3 cp s3://teacheramitk/new-node-project.zip
+# fatal Error
+```
+**Step 9. Goto AWS Management Console>Services>IAM>Roles>EC2S3FullAccess**
+- Click on Permissions to check the policy
+
+**Step 10. Goto Ec2Dashboard>Actions>Security>Modify IAM role**
+- IAM role - EC2S3FullAccess
+
+Click on Save
+
+**Step 11. Goto Step 8 and continue..**
+```sh
+$ aws s3 cp s3://teacheramitk/new-node-project.zip
+$ ls
+$ unzip new-node-project
+$ ls
+$ npm install
+$ node app.js
+```
+**Step 11. Copy the Public Ip address and paste in the browser**
+- Application is working fine
+
 
 # Create Auto Scaling Lifecycle Hook - Lab
 
@@ -200,103 +298,6 @@ Click on Update
 
 # End of Lab
 
-# Deploy Sample App on single ec2 from CodeCommit- Lab
-
-**Step 1.Launch an Instance with default settings**
-
-**Step 2.Ec2>Actions>Connect>connect**
-
-**Step 3.Run the following commands**
-```sh
-$ sudo su 
-$ yum update -y
-$ curl -sL https://rpm.nodesource.com/setup.lts.x | bash -
-$ yum install nodejs -y
-$ node -v
-$ yum install git -y
-$ git --version
-$ git clone https://git.codecommit.ap.south-1.amazonaws.com/v1/repos/Sample-Node-App
-# Provide User name & Password
-$ Clear
-$ ls 
-$ cd Sample-Node-App/
-$ npm install
-$ node app.js
-```
-**Step 4.Copy the INSTANCE Public ip address and paste it in browser**
-- Not coming up due to no port 3000 open
-
-**Step 5.Ec2>Security Groups>select your SG>Edit inbound rules**
-- Add rule 
-   - Type - Custom TCP 
-   - Port - 3000 
-   - Source - 0.0.0.0/0
-  
-Click to Save rules
-
-**Step 5.Copy the INSTANCE Public ip address and paste it in browser**
-Now it is Up and running.
-
-# End of Lab
-
-# Deploy Sample App on single ec2 from S3 - Lab
-
-**Step 1. AWS Management Console>Services>S3>Create Bucket**
-
-**Step 2. Give following details**
-- Bucket name - teacheramitk
-- Region
-
-Click on Create Bucket
-
-**Step 3. Click on bucket teacheramitk>Upload**
-
-**Step 4. Open Visual Studio Code**
-- Open new-node-project Folder
-- Open the Terminal
-- Type the following commands
-```sh
-$ zip -r new-node-project.zip . -x ".*" -x "_MACOSX"
-```
-
-**Step 5.Click on bucket teacheramitk>Upload>Add files>new-node-project.zip**
-- Click on Upload
-
-**Step 6. Click on new-node-project.zip**
-- Copy S3 URI
-
-**Step 7.Create Ec2 Instance**
-- Use Default settings to create Ec2
-- Security group with 80,22,300 Port Open
-
-**Step 8.EC2>Instances>Instance-xxx>Actions>Connect>connect**
-```sh
-$ sudo su
-$ yum update -y
-$ curl -sL https://rpm.nodesource.com/setup_lts.x | bash -
-$ yum install nodejs -y
-$ aws s3 cp s3://teacheramitk/new-node-project.zip
-# fatal Error
-```
-**Step 9. Goto AWS Management Console>Services>IAM>Roles>EC2S3FullAccess**
-- Click on Permissions to check the policy
-
-**Step 10. Goto Ec2Dashboard>Actions>Security>Modify IAM role**
-- IAM role - EC2S3FullAccess
-
-Click on Save
-
-**Step 11. Goto Step 8 and continue..**
-```sh
-$ aws s3 cp s3://teacheramitk/new-node-project.zip
-$ ls
-$ unzip new-node-project
-$ ls
-$ npm install
-$ node app.js
-```
-**Step 11. Copy the Public Ip address and paste in the browser**
-- Application is working fine
 
 # End of Lab
 
