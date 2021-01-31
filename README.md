@@ -1,8 +1,7 @@
 # Section-6
 
-# Section-6-Deploying-Sample-App-on-AWS-(Without CI_CD)
 
-# EC2-On-ASG-Lab-1
+# Create Auto Scaling Lifecycle Hook - Lab
 
 **Step 1. Goto AWS Management Console>Services>Ec2>Ec2Dashboard>Auto Scaling>Launch Configurations**
 
@@ -40,7 +39,8 @@ Successfully created launch configuration test-lc
 
 # End of lab
 
-# # EC2-On-ASG-Lab-2
+
+# Deploy Sample App on EC2 Fleet - Lab
 
 **Step 1 Goto AWS Management Console>Services>Ec2>Ec2Dashboard>Auto Scaling>Auto Scaling groups>test-asg>edit**
 - Desired capacity - 1
@@ -99,7 +99,7 @@ Click on Update
 # End of Lab
 
 
-# EC2-On-ASG-Lab-3
+# Deploy Sample App on EC2 Fleet with ALB : Part 1 - Lab
 
 **Step 1.Ec2>Auto Scaling groups>Load Balancing>Target Groups**
 
@@ -176,7 +176,7 @@ Click on Next:Register Targets
 
 # End of lab
 
-# EC2-On-ASG-Lab-4
+# Deploy Sample App on EC2 Fleet with ALB : Part 2 - Lab
 
 **Step 1. Goto AWS Management Console>Services>Ec2>Ec2Dashboard>Auto Scaling>Auto Scaling groups>test-asg>edit**
 - - Scroll down to Load balancing step
@@ -200,7 +200,7 @@ Click on Update
 
 # End of Lab
 
-# SingleEC2-deployment-cc-Lab
+# Deploy Sample App on single ec2 from CodeCommit- Lab
 
 **Step 1.Launch an Instance with default settings**
 
@@ -239,7 +239,7 @@ Now it is Up and running.
 
 # End of Lab
 
-# SingleEc2Deployment-S3-lab
+# Deploy Sample App on single ec2 from S3 - Lab
 
 **Step 1. AWS Management Console>Services>S3>Create Bucket**
 
