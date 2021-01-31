@@ -343,3 +343,34 @@ click on save rules
 
 # End of lab
 
+# Section Clean-up - Lab
+
+**Step 1. AWS Management Console>Services>ElasticBeanStalk>Applications>node-app>Actions>Delete Application**
+- Enter the name in Confirm Application Deletion
+- Click on Delete
+
+**Step 2. Goto AWS Management Console>EC2 Dashboard>Auto Scaling Groups>test-asg**
+- Ensure that all the ASG group have following settings by Editing-
+  - Desired - 0
+  - Minimum - 0
+  - Maximum - 0
+  
+**Step 3. AWS Management Console>EC2 Dashboard>Load Balancing>load Balancers>testlb>Actions>Delete**
+- Click on Yes,Delete
+
+**Step 5. AWS Management Console>EC2 Dashboard>Load Balancing>Target groups>test>Actions>Delete**
+- Click on Yes,Delete  
+
+**Step 2. Goto AWS Management Console>EC2 Dashboard>Auto Scaling Groups>test-asg>delete>confirm delete**
+
+**Step 3. Goto AWS Management Console>EC2 Dashboard>AUTO SCALING>Launch configurations>test-lc>Actions>Delete>Confirm delete**
+
+# End of lab
+
+
+
+
+
+
+
+
