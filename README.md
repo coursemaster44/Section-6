@@ -301,7 +301,8 @@ $ node app.js
 # End of Lab
 
 
-# ElasticBeanstalk
+# Deploy Sample App on Elastic Beanstalk - Lab
+
 **Step 1.AWS Management Console>Services>Elastic Beanstalk>Create Application**
 
 **Step 2.In Create a web app give details as following**
